@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create Ride</title>
+    <link href="/static/create.css" rel="stylesheet">
+</head>
+<body>
+    <div class="form1">
+        <h1>Create a Ride</h1>
+        <form id="create-ride-form" action="/Create" method="post">
+            <select id="search_by" name="search_by" required>
+                <option value="" disabled selected>Your Role</option>
+                <option value="captain">Captain</option>
+                <option value="cruiser">Cruiser</option>
+            </select>
+            <div class="form-group">
+                <input placeholder="Pickup Location" type="text" id="pickup_location" name="pickup_location" required autocomplete="off">
+                <div id="pickup-suggestions" class="suggestions"></div>
+            </div>
+            <div class="form-group">
+                <input placeholder="Drop-off Location" type="text" id="dropoff_location" name="dropoff_location" required autocomplete="off">
+                <div id="dropoff-suggestions" class="suggestions"></div>
+            </div>
+            <div class="form-group">
+                <input placeholder="number" type="number" id="number" name="number" required autocomplete="off">
+                <div id="number" class="suggestions"></div>
+            </div>
+
+            <div class="form-group">
+                <input type="date" id="date" name="date" required>
+            </div>
+            <br>
+            <div class="form-group">
+                <label for="time1">Time of Begin:</label>
+                <input type="time" id="time1" name="time1" required>
+            </div>
+            <div class="form-group">
+                <label for="time2">Time of End:</label>
+                <input type="time" id="time2" name="time2" required>
+            </div>
+            <div class="good">
+                <button type="submit">Create Ride</button>
+            </div>
+        </form>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script>
+        function searchLocation(inputId, suggestionsId) {
+            var input = document.getElementById(inputId);
+            var query = input.value.trim();
+            var suggestionsDiv = document.getElementById(suggestionsId);
+
+            if (query !== '') {
+                axios.get('/search_location', {
+                    params: {
+                        query: query
+                    }
+                })
+                .then(function (response) {
+                    suggestionsDiv.innerHTML = ''; // Clear previous suggestions
+                    if (response.data.length > 0) {
+                        response.data.forEach(function (location) {
+                            var suggestion = document.createElement('div');
+                            suggestion.textContent = location;
+                            suggestion.classList.add('suggestion');
+                            suggestion.addEventListener('click', function () {
+                                input.value = location;
+                                suggestionsDiv.innerHTML = ''; // Clear suggestions on click
+                            });
+                            suggestionsDiv.appendChild(suggestion);
+                        });
+                        suggestionsDiv.style.display = 'block';
+                    } else {
+                        suggestionsDiv.style.display = 'none';
+                    }
+                })
+                .catch(function (error) {
+                    console.error(error);
+                });
+            } else {
+                suggestionsDiv.style.display = 'none';
+            }
+        }
+
+        var pickupInput = document.getElementById('pickup_location');
+        var dropoffInput = document.getElementById('dropoff_location');
+
+        pickupInput.addEventListener('input', function () {
+            searchLocation('pickup_location', 'pickup-suggestions');
+        });
+
+        dropoffInput.addEventListener('input', function () {
+            searchLocation('dropoff_location', 'dropoff-suggestions');
+        });
+
+        // Prevent form submission on enter key press
+        document.getElementById('create-ride-form').addEventListener('keypress', function (e) {
+            if (e.key === 'Enter') {
+                e.preventDefault();
+            }
+        });
+    </script>
+</body>
+</html>

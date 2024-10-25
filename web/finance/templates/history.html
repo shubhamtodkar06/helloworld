@@ -1,0 +1,30 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    History
+{% endblock %}
+
+{% block main %}
+<div class="table-container">
+<h1>History</h1>
+<br>
+    <table>
+        <tr>
+            <th>Symbol</th>
+            <th>Quantity</th>
+            <th>Avg. Price</th>
+            <th>Invested Amount</th>
+            <th>Action</th>
+        </tr>
+        {% for port in ports %}
+        <tr>
+                <td>{{port.symbol}}</td>
+                <td>{{port.quantity}}</td>
+                <td>{{port.price}}</td>
+                <td>{{port.cash}}</td>
+                <td>{{port.action}}</td>
+        </tr>
+        {% endfor%}
+    </table>
+</div>
+{% endblock %}

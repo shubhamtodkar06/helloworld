@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+    <head>
+        <meta name="viewport" content="initial-scale=1, width=device-width">
+
+        <title>
+            list
+        </title>
+        <link href="/static/list.css" rel="stylesheet">
+
+    </head>
+
+    <body>
+        <form action="/Borrow" method="get">
+            <div class="new2">
+                <div class="container">
+                    <button class="glow-on-hover">Find More Books</button>
+                </div>
+            </div>
+        </form>
+        <br>
+        <form action="/logout" method="get">
+            <div class="new2">
+                <div class="container">
+                    <button class="glow-on-hover">Logout</button>
+                </div>
+            </div>
+        </form>
+        <br>
+        <br>
+        <div class="container">
+            <table>
+
+                <tr>
+                    <th>COVER</th>
+                    <th>TITLE</th>
+                    <th>SERIES</th>
+                    <th>AUTHOR</th>
+                    <th>GENRES</th>
+                    <th>NO. OF PAGES</th>
+                    <th>AVAIL</th>
+                    <th>BORROW</th>
+                </tr>
+
+
+                {% for book in books %}
+                <tr>
+                    <td><img src="{{book.coverImg}}" alt="Book Image" width="100" height="120"></td>
+                    <td>{{book.title}} </td>
+                    <td>{{book.series}} </td>
+                    <td>{{book.author}} </td>
+                    <td>{{book.genres}} </td>
+                    <td>{{book.pages}} </td>
+                    <td>img</td>
+                    <td>
+                        <form action="/list" method="POST">
+                            <div class="container">
+                                <button value="{{book.title}}" name="borrow" type="submit" class="glow-on-hover">Borrow
+                                </button>
+
+                            </div>
+                        </form>
+
+                    </td>
+                </tr>
+                {% endfor %}
+            </table>
+            <div>
+    </body>
+
+</html>

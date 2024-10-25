@@ -1,0 +1,118 @@
+
+h1 {
+    font-size: 200px;
+    font-weight: 800;
+    background-image: linear-gradient(to right, rgba(252, 225, 208, 1), rgba(255, 173, 214, 1), rgba(162, 186, 245, 1), lavender);
+    text-align: left;
+    text-align: left;
+    color: transparent;
+    background-clip: text;
+    -webkit-background-clip: text;
+    text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.1); /* Reduced blur */
+    letter-spacing: -2px; /* Adjusted letter spacing */
+    /* New style */
+    -webkit-text-stroke: 2px black; /* Black border around each letter */
+    text-stroke: 2px black; /* Black border around each letter */
+}
+
+body {
+    background-image: url('https://static.vecteezy.com/system/resources/previews/019/887/550/original/illustration-of-car-sharing-service-or-online-transportation-concept-people-use-smartphone-to-order-online-transportation-car-based-on-gps-modern-flat-style-design-illustration-vector.jpg');
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: 70%;
+    background-position: top right; /* Set the background position to top right */
+}
+
+
+
+
+.container {
+align-items: center;
+display: flex;
+text-align: center;
+}
+
+
+.glow-on-hover {
+width: 220px;
+height: 50px;
+border: none;
+outline: none;
+color: white;
+background: #111;
+cursor: pointer;
+position: relative;
+z-index: 0;
+border-radius: 10px;
+}
+
+.glow-on-hover:before {
+content: '';
+background: white;
+position: absolute;
+top: -2px;
+left:-2px;
+background-size: 400%;
+z-index: -1;
+filter: blur(5px);
+width: calc(100% + 4px);
+height: calc(100% + 4px);
+animation: glowing 20s linear infinite;
+opacity: 0;
+transition: opacity .3s ease-in-out;
+border-radius: 10px;
+}
+
+.glow-on-hover:active {
+color: #000
+}
+
+.glow-on-hover:active:after {
+background: white;
+}
+
+.glow-on-hover:hover:before {
+opacity: 1;
+}
+
+.glow-on-hover:after {
+z-index: -1;
+content: '';
+position: absolute;
+width: 100%;
+height: 100%;
+background: black;
+left: 0;
+top: 0;
+border-radius: 10px;
+}
+
+.new1{
+position: absolute;
+left: 900px;
+top: 700px;
+
+}
+
+.new2{
+position: absolute;
+left: 230px;
+top: 0px;
+}
+
+@keyframes glowing {
+0% { background-position: 0 0; }
+50% { background-position: 400% 0; }
+100% { background-position: 0 0; }
+}
+
+form *{
+font-family: Courier New,Courier,Lucida Sans Typewriter,Lucida Typewriter,monospace;
+font-weight: 800;
+color: #ffffff;
+letter-spacing: 0.5px;
+outline: none;
+border: none;
+}
+
+

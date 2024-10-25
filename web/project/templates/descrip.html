@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+        <title>My Bookshelf</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="/static/descrip.css" rel="stylesheet">
+    </head>
+
+    <body>
+        <div class="container">
+            <div class="book-grid">
+                <div class="book">
+                    {% for book in books %}
+                    <img src="{{book.coverImg}}" alt="Book 1" class="book-image">
+                    <div class="book-details">
+                        <br>
+                        <div class="book-title">{{book.title}}</div>
+                        <div class="book-author">{{book.author}}</div>
+                        <div class="book-series">{{book.series}}</div>
+                        <div class="book-genres">{{book.genres}}</div>
+                        <div class="book-pages">{{book.pages}}</div>
+
+                        <br>
+                        <br>
+
+
+                        <form action="/confirm" method="post">
+                            <button name="title" type="submit" class="glow-on-hover" value="{{book.title}}">CONFIRM BOOK</button><br>
+                        </form>
+                        {%endfor%}
+                        <br>
+                        <form action="/Borrow" method="get">
+                            <button class="glow-on-hover" type="submit">FIND MORE BOOKS</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+        </div>
+    </body>
+
+</html>

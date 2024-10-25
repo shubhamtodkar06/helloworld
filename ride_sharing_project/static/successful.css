@@ -1,0 +1,185 @@
+/* Reset CSS */
+*,
+*:before,
+*:after {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-image: url('https://img.freepik.com/free-vector/city-driver-concept-illustration_114360-1209.jpg');
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: 50%;
+    background-position: top right;
+}
+
+.form1 {
+    background-image: url('https://media.istockphoto.com/id/1268054405/vector/route-planning-city-driving-road-network-destination-map.jpg?s=612x612&w=0&k=20&c=fFAXAL-udAnyNMc03hDYeVl3fg7LJyGu3XG-6xPi58o=');
+    background-color: rgba(255, 255, 255, 0.13);
+    position: absolute;
+    transform: translate(-50%, -50%);
+    top: 50%;
+    left: 30%;
+    width: 500px; /* Reduced width */
+    border-radius: 10px;
+    backdrop-filter: blur(10px);
+    border: 2px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 0 40px rgba(8, 7, 16, 0.6);
+    padding: 50px 35px;
+}
+
+/* Form and button styles */
+form * {
+    font-family: Courier New, Courier, Lucida Sans Typewriter, Lucida Typewriter, monospace;
+    font-weight: 800;
+    color: #ffffff;
+    letter-spacing: 0.5px;
+    outline: none;
+    border: none;
+    text-align: left;
+}
+
+form h1 {
+    font-size: 40px;
+    font-weight: 500;
+    text-align: left;
+}
+
+input,
+select,
+button {
+    font-family: Courier New, Courier, Lucida Sans Typewriter, Lucida Typewriter, monospace;
+    display: block;
+    height: 50px;
+    width: 100%;
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 3px;
+    padding: 0 10px;
+    margin-top: 8px;
+    font-size: 14px;
+    font-weight: 300;
+}
+
+select {
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    background-image: url('data:image/svg+xml;utf8,<svg fill="white" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M7 10l5 5 5-5z"/></svg>');
+    background-position: right 10px top 50%;
+    background-repeat: no-repeat;
+    border: 1px solid rgba(255, 255, 255, 0.5);
+}
+
+::placeholder {
+    color: #e5e5e5;
+}
+
+button {
+    cursor: pointer;
+    border: none;
+    outline: none;
+    color: #ffffff;
+    text-align: center;
+    position: relative;
+    z-index: 0;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: rgba(255, 255, 255, 0.3);
+}
+
+button:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 3px;
+    transition: opacity 0.3s ease;
+    z-index: -1;
+}
+
+button:hover:before {
+    opacity: 0.3;
+}
+
+::placeholder{
+    color: #e5e5e5;
+    }
+
+
+    .container {
+    align-items: center;
+    display: flex;
+    text-align: center;
+    }
+
+    .glow-on-hover {
+    width: 220px;
+    font-size: 18px;
+    font-weight: 500;
+    height: 50px;
+    border: none;
+    outline: none;
+    color: #111;
+    background: black;
+    cursor: pointer;
+    position: relative;
+    z-index: 0;
+    border-radius: 10px;
+    }
+
+    .glow-on-hover:before {
+    content: '';
+    background: white;
+    position: absolute;
+    top: -2px;
+    left:-2px;
+    background-size: 400%;
+    z-index: -1;
+    filter: blur(5px);
+    width: calc(100% + 4px);
+    height: calc(100% + 4px);
+    animation: glowing 20s linear infinite;
+    opacity: 0;
+    transition: opacity .3s ease-in-out;
+    border-radius: 10px;
+    }
+
+    .glow-on-hover:active {
+    color: white;
+    }
+
+    .glow-on-hover:active:after {
+    background: black;
+    color : white;
+    }
+
+    .glow-on-hover:hover:before {
+    opacity: 1;
+    }
+
+    .glow-on-hover:after {
+    z-index: -1;
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: white;
+    left: 0;
+    top: 0;
+    border-radius: 10px;
+    }
+
+    p{
+        color:white;
+    }
+
+    button{
+        text-align:center;
+    }

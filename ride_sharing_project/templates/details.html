@@ -1,0 +1,45 @@
+<!-- details.html -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Details</title>
+</head>
+<body>
+    <h1>User Details</h1>
+    <h2>User Information</h2>
+    <ul>
+        {% for row in info %}
+        <li>User ID: {{ row.user_id }}</li>
+        <li>Name: {{ row.name }}</li>
+        <li>Phone Number: {{ row.number }}</li>
+        <li>Email: {{ row.email }}</li>
+        {% endfor %}
+    </ul>
+
+    <h2>Ride Information</h2>
+    <ul>
+        {% for ride in ride_info %}
+        <li>User ID: {{ ride.userid }}</li>
+        <li>Pickup Location: {{ ride.pick }}</li>
+        <li>Drop Location: {{ ride.drop_l }}</li>
+        <li>Date: {{ ride.date }}</li>
+        <li>Time: {{ ride.time1 }} to {{ ride.time2 }}</li>
+        <li>Driver/Passenger: {{ ride.who }}</li>
+        <li>Passenger's Phone Number: {{ ride.passengers }}</li>
+        <li>Passengers Added: {{ ride.pass_added }}</li>
+        {% endfor %}
+    </ul>
+
+    <!-- Form for cancelling ride -->
+    <form action="/cancel_ride" method="POST">
+        <input type="hidden" name="ride_id" value="{{ ride_info[0].id }}">
+        <button type="submit">Cancel Ride</button>
+    </form>
+
+    <!-- Home button -->
+    <a href="/" class="btn btn-primary">Home</a>
+</body>
+</html>

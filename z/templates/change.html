@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+
+        <meta name="viewport" content="initial-scale=1, width=device-width">
+        <title>
+            Change Password
+        </title>
+        <link href="/static/change.css" rel="stylesheet">
+
+      </head>
+    <body>
+        <form action="/change_pass" method="post" class="form1">
+            <h1>Change Password</h1>
+            <br>
+            <p>{{nouserid}}</p>
+            <input type="text" autocomplete="off" name="user" placeholder="Enter UserId/Number" required autofocus><br>
+            <input type="email" autocomplete="off" name="email" placeholder="Enter Email Id" required autofocus>
+            <p>{{noemail}}</p><br>
+            <input type="password" autocomplete="off" name="psd" placeholder="Enter New Password" required autofocus><br>
+            <input type="password" autocomplete="off" name="pass" placeholder="Confirm Password" required autofocus>
+            <p>{{nopass}}</p>
+            <br><br>
+            <input type="submit" value="Change Password" name="forget_pass">
+        </form>
+    </body>
+</html>

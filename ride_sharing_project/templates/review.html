@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Comment and Review Page</title>
+    <link rel="stylesheet" href="review.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Comment and Review Page</h1>
+        <form id="commentForm">
+            <label for="username">Username:</label>
+            <input type="text" id="username" required>
+            <label for="comment">Comment:</label>
+            <textarea id="comment" rows="4" required></textarea>
+            <button type="submit">Submit</button>
+        </form>
+        <div id="comments">
+            <!-- Comments will be displayed here -->
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

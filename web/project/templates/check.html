@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+    <head>
+        <meta name="viewport" content="initial-scale=1, width=device-width">
+
+        <title>
+            Requests
+        </title>
+        <link href="/static/check.css" rel="stylesheet">
+
+    </head>
+
+    <body>
+        <div>
+            <div class="container">
+                <table>
+
+                    <tr>
+                        <th>Request By</th>
+                        <th>TITLE</th>
+                        <th>AUTHOR</th>
+                        <th>TYPE</th>
+                        <th>DESCRIPTION</th>
+                        <th>ACTION</th>
+                    </tr>
+
+
+                    {% for request in requests %}
+                    <tr>
+                        <td>{{request.name}} </td>
+                        <td>{{request.title}} </td>
+                        <td>{{request.author}} </td>
+                        <td>{{request.requests}} </td>
+                        <td>{{request.description}} </td>
+                        <td>
+
+
+                            <form action="/check" method="POST">
+                                <input type="hidden" name="requests" value="{{request.requests}}">
+                                <div class="container">
+                                    <button value="{{request.title}}" name="title" type="submit" class="glow-on-hover">Request Completed</button>
+
+                                </div>
+                            </form>
+
+                        </td>
+                    </tr>
+                    {% endfor %}
+                </table>
+            </div>
+            <br>
+            <div>
+                <form action="/lib_success" method="get">
+
+                    <div class="container">
+                        <button class="glow-on-hover">HOME</button>
+                    </div>
+                </form>
+                <br>
+                <form action="/logout" method="post">
+
+                    <div class="container">
+                        <button class="glow-on-hover">LOGOUT</button>
+                    </div>
+                </form>
+    </body>
+
+</html>

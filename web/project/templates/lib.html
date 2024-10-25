@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+
+        <meta name="viewport" content="initial-scale=1, width=device-width">
+        <title>
+            librarian login
+        </title>
+        <link href="/static/login.css" rel="stylesheet">
+
+    </head>
+
+    <body>
+        <div class="form1">
+            <form action="/lib_login" method="post">
+                <h1>LOGIN FOR LIBRARIAN</h1>
+                <br>
+                <input type="text" name="user" placeholder="Enter UserId" required autofocus>
+                <p>{{nofound}}</p><br>
+                <input type="password" name="passw" placeholder="Enter Password" required autofocus><br>
+                <p>{{incorrect}}</p>
+                <br>
+                <input type="submit" value="Login" name="submit">
+            </form>
+            <br>
+        </div>
+    </body>
+
+</html>

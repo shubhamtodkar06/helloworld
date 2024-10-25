@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap" rel="stylesheet">
+        <link href="styles.css" rel="stylesheet">
+        <title>Trivia!</title>
+        <script>
+            // TODO: Add code to check answers to questions
+            document.addEventListener('DOMcontentLoaded', function() {
+
+                let correct = document.querySelector('.correct');
+                correct.addEventListener('click', funtion(){
+                    correct.style.backgroundColor = 'green';
+                    document.querySelector('#feedback1').innerHTML ='CORRECT!!!';
+                });
+
+                let incorrects = document.querySelectorALL('.incorrect');
+                for (let i = 0; i < incorrects.length; i++){
+                    incorrects[i].addEventListener('click', function(){
+                        incorrects[i].style.backgroundColor = 'red';
+                        document.querySelector('#feedback1').innerHTML = 'INCORRECT!!!';
+                        });
+
+            }
+                document.querySelector('#check').addEventListener('click', function() {
+                    let input = document.querySelector('input');
+                    if (input.value === 'China'){
+                        input.style.backgroundColor = 'green';
+                        document.querySelector('#feedback2').innerHTML= "Correct!";
+                    } else {
+                        input.style.backgroundColor = 'red';
+                        document.querySelector('#feedback2').innerHTML= "Incorrect!";
+                    }
+
+                });
+
+            });
+
+        </script>
+    </head>
+    <body>
+        <div class="header">
+            <h1>Trivia!</h1>
+        </div>
+
+        <div class="container">
+            <div class="section">
+                <h2>Part 1 :</h2>
+                <hr>
+                <h3>Name the country where we can find both lions and tigers.</h3>
+
+                <button class = "correct">INDIA</button>
+                <button class = "incorrect">USA</button>
+                <button class = "incorrect">UK</button>
+                <button class = "incorrect">SOUTH AFRICA</button>
+                <button class = "incorrect">NEW ZEALAND</button>
+
+                <p id ="feedback1"><p>
+
+
+            </div>
+
+            <div class="section">
+                <h2>Part 2: Free Response</h2>
+                <hr>
+                <h3>Write a name of country with highest population.</h3>
+
+                <input type="text"></input>
+                <button id="check">CHECK</button>
+                <p id="feedback2"></p>
+            </div>
+        </div>
+    </body>
+</html>

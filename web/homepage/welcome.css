@@ -1,0 +1,23 @@
+button {
+    background-color: #000;
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+
+    }
+
+button:hover {
+    background-color: #111;
+    }
+
+
+body {
+    background-image: url("https://wallpaperaccess.com/full/3214373.jpg");
+    background-size: cover;
+    }

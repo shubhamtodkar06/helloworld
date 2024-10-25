@@ -1,0 +1,44 @@
+/* Reset styles */
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  font-family: sans-serif;
+  background-image: url('https://media.istockphoto.com/id/1268054405/vector/route-planning-city-driving-road-network-destination-map.jpg?s=612x612&w=0&k=20&c=fFAXAL-udAnyNMc03hDYeVl3fg7LJyGu3XG-6xPi58o='); /* Background image for form template */
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+.container {
+  background-image: url('https://media.istockphoto.com/id/13323924/photo/online-ordering-taxi-car-rent-sharing-using-service-mobile-application.jpg?s=612x612&w=0&k=20&c=fFAXAL-udAnyNMc03hDYeVl3fg7LJyGu3XG-6xPi58o='); /* Background image for entire page */
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  padding: 50px;
+  max-width: 600px;
+  width: 100%;
+}
+
+.heading {
+  font-size: 2.5rem;
+  margin-bottom: 15px;
+  color: #fff; /* White text for better readability on background image */
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3); /* Optional drop shadow for text */
+}
+
+.subheading {
+  font-size: 1.2rem;
+  color: #ddd; /* Light gray text for better readability on background image */
+  margin-bottom:

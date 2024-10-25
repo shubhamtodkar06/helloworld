@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+
+        <meta name="viewport" content="initial-scale=1, width=device-width">
+        <title>
+            login
+        </title>
+
+
+    </head>
+    <body>
+        <form action="/login" method="post" name="form">
+        <label for="fname">First name :</label>
+        <input type="text" name="fname" placeholder="firstname"><br><br>
+        <label for="lname">Last name :</label>
+        <input type="text" name="lname" placeholder="lastname"><br><br>
+        <label for="number">number :</label>
+        <input type="number" name="number" pattern="[1-9]{1}[0-9]{9}"><br><br>
+        <label for="email">Email-id  .  :</label>
+        <input type="email" name="email"><br><br>
+        <label for="pass">Password  :</label>
+        <input type="password" name="pass"><br><br>
+        <input type="submit" value="login" name="submit">
+</form>
+    </body>
+</html>

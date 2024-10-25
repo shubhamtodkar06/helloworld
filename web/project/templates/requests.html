@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+        <title>Request</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="/static/requests.css" rel="stylesheet">
+    </head>
+
+    <body>
+        <div class="form1">
+            <form action="/requests" method="post">
+                <h1>REQUEST</h1>
+                <br>
+                <input type="text" name="title" placeholder="TITLE" required autofocus>
+                <input type="text" name="author" placeholder="AUTHOR" required autofocus>
+                <br>
+                <select id="search_by" name="search_by" required>
+                    <option value="" disabled selected>Request</option>
+                    <option value="ebook">Ebook</option>
+                    <option value="audiobook">AudioBook</option>
+                    <option value="hardcopy">HardCopy</option>
+                </select>
+                <br><br>
+                <textarea id="w3review" name="textarea" rows="5%" cols="35%" autofocus required placeholder="Enter Description about Book"></textarea>
+                <br><br>
+                <div class="new2">
+                    <div class="container">
+                        <button class="glow-on-hover" type="submit">Make Request</button>
+                    </div>
+                </div>
+            </form>
+            <br>
+            <p> .................................................................................</p><br>
+            <form action="/success" method="GET">
+
+                <div class="container">
+                    <button class="glow-on-hover">Home</button>
+                </div>
+            </form>
+            <br>
+            <form action="/logout" method="POST">
+
+                <div class="container">
+                    <button class="glow-on-hover">Logout</button>
+                </div>
+            </form>
+        </div>
+    </body>
+
+</html>

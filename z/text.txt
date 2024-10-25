@@ -1,0 +1,33 @@
+CREATE TABLE loger(
+    user_id int IDENTITY(1,1) PRIMARY KEY,
+    name varchar(255) NOT NULL,
+    number INTERGER,
+    email TEXT,
+    pass TEXT
+);
+
+INSERT INTO loger(id,name, number, email, pass) VALUES('1''shubham ','7385760936','shubhtodkar0614@duck.com','hol')
+
+CREATE TABLE lib(
+    user_id int IDENTITY(1,1) PRIMARY KEY,
+    name varchar(255) NOT NULL,
+    number INTERGER,
+    email TEXT,
+    pass TEXT,
+    notify TEXT
+    );
+INSERT INTO lib(user_id, name, number, email, pass, notify) VALUES('set', 'shubham', 9011604105,'setodkar2234@gmail.com', 'hello', 'none')
+
+
+CREATE TABLE note(
+    name varchar(255) NOT NULL,
+    notify TEXT
+    );
+
+CREATE TABLE requests(
+    name varchar(255) NOT NULL,
+    title TEXT,
+    author TEXT,
+    requests TEXT,
+    description TEXT
+)

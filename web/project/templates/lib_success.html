@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+
+        <meta name="viewport" content="initial-scale=1, width=device-width">
+        <title>
+            Lib_info
+        </title>
+        <link href="/static/successful.css" rel="stylesheet">
+
+    </head>
+
+    <body>
+        <div class="form1">
+            <form action="/approve" method="get">
+                <h1>Hello,<br> {{name}}</h1><br>
+                <input type="submit" value='Approve/Return A Books'>
+            </form>
+
+            <form action="/add" method="get">
+                <input type="submit" value="Add a New Book">
+            </form>
+            <form action="/check" method="get">
+                <input type="submit" value="Check Requests">
+            </form>
+            <br>
+
+            <p> .................................................................................</p><br>
+            <form action="/logout" method="POST">
+
+                <div class="container">
+                    <button class="glow-on-hover">Logout</button>
+
+                </div>
+            </form>
+        </div>
+    </body>
+
+</html>

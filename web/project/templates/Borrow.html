@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+
+        <meta name="viewport" content="initial-scale=1, width=device-width">
+        <title>
+            Borrow
+        </title>
+        <link href="/static/borrow.css" rel="stylesheet">
+
+    </head>
+
+    <body>
+        <div class="form1">
+            <form action="/Borrow" method="post">
+                <h1>Find a Book</h1>
+                <br><br>
+                <select id="search_by" name="search_by" required>
+                    <option value="" disabled selected>Search By</option>
+                    <option value="title">Title</option>
+                    <option value="author">Author Name</option>
+                    <option value="series">Series Name</option>
+                    <option value="genres">Genres</option>
+                </select>
+                <br><br>
+                <input type="text" name="book_" placeholder="Enter ANY Word From Name!!!" required autofocus>
+                <br><br>
+                <div class="new2">
+                    <div class="container">
+                        <button class="glow-on-hover" type="submit">Find</button>
+                    </div>
+                </div>
+            </form>
+            <br>
+            <form action="/success" method="GET">
+                <div class="container">
+                    <button class="glow-on-hover">Home</button>
+                </div>
+            </form>
+    </body>
+
+</html>

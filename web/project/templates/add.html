@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+        <title>Add</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="/static/requests.css" rel="stylesheet">
+    </head>
+
+    <body>
+        <div class="form1">
+            <form action="/add" method="post">
+                <h1>Add Book to Shelf</h1>
+                <br>
+                <input type="text" name="title" placeholder="TITLE" required autofocus>
+                <input type="text" name="author" placeholder="AUTHOR" required autofocus>
+                <input type="text" name="series" placeholder="series" required autofocus>
+                <input type="number" name="page" placeholder="No. of Pages" required autofocus>
+                <input type="text" name="isbn" placeholder="isbn" required autofocus>
+                <input type="url" name="coverImg" placeholder="Link for Cover Image" required autofocus>
+
+                <br><br>
+                <textarea id="w3review" name="descrip" rows="2%" cols="35%" autofocus required placeholder="Enter Description about Book"></textarea>
+                <br><br>
+                <textarea id="w3review" name="genres" rows="4%" cols="35%" autofocus required placeholder="Enter Genres of Book (NOTE : Write genres seperated by Comma; eg.'Young Adult', 'Fiction', 'Dystopia', 'Fantasy', 'Science Fiction', 'Romance', 'Adventure', 'Teen', 'Post Apocalyptic', 'Action')"></textarea>
+                <br><br>
+                <div class="new2">
+                    <div class="container">
+                        <button class="glow-on-hover" type="submit">Add a New Book</button>
+                    </div>
+                </div>
+            </form>
+            <br>
+            <p> .................................................................................</p><br>
+            <form action="/logout" method="POST">
+
+                <div class="container">
+                    <button class="glow-on-hover">Logout</button>
+                </div>
+
+            </form>
+        </div>
+    </body>
+
+</html>

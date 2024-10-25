@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="viewport" content="initial-scale=1, width=device-width">
+    <title>Student_Info</title>
+    <link href="/static/successful.css" rel="stylesheet">
+</head>
+<body>
+    <div class="form1">
+        <form id="main_form" method="get">
+            <h1>Hello,<br> {{name}}</h1><br>
+            <button type="submit" data-action="/search">Search/Detail Ride</button>
+            <button type="submit" data-action="/{{button}}">{{button}} Ride</button>
+            <button type="submit" data-action="/map">Check Map</button>
+            <button type="submit" data-action="/profile">Profile</button>
+            <br>
+        </form>
+        <p>.................................................................................</p><br>
+        <form action="/logout" method="post">
+            <div class="container">
+                <button class="glow-on-hover">Logout</button>
+            </div>
+        </form>
+    </div>
+
+    <script>
+        document.getElementById('main_form').addEventListener('submit', function (event) {
+            event.preventDefault(); // Prevent default form submission
+
+            // Get the action URL based on the button clicked
+            var action = event.submitter.getAttribute('data-action');
+
+            // Navigate to the generated URL
+            window.location.href = action;
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,19 @@
+public class OddNumberExceptionExample {
+
+    public static void main(String[] args) {
+        try {
+            // Test the method with an odd number
+            checkIfEven(5);
+        } catch (IllegalArgumentException e) {
+            System.out.println("Exception: " + e.getMessage());
+        }
+    }
+
+    public static void checkIfEven(int number) throws IllegalArgumentException {
+        if (number % 2 != 0) {
+            throw new IllegalArgumentException("Number is odd and not allowed.");
+        } else {
+            System.out.println("Number is even.");
+        }
+    }
+}

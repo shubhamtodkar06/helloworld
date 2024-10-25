@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+
+        <meta name="viewport" content="initial-scale=1, width=device-width">
+        <title>
+            Borrow
+        </title>
+        <link href="/static/approve.css" rel="stylesheet">
+
+    </head>
+
+    <body>
+        <h1>Approve Request to Borrow/Return</h1>
+        <table>
+            <thead>
+                <tr>
+                    <th>Student Name</th>
+                    <th>Book Title</th>
+                    <th>Book Author</th>
+                    <th>ISBN</th>
+                    <th>Action</th>
+                    <th>Approve</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for infos in info%}
+                <tr>
+                    <td>{{infos.name}}</td>
+                    <td>{{infos.title}}</td>
+                    <td>{{infos.author}}</td>
+                    <td>{{infos.isbn}}</td>
+                    <td>{{infos.action}}</td>
+                    <td>
+                        <form action="/lib_{{infos.action}}" method="POST">
+                            <div class="container">
+                                <input hidden name="name" value="{{infos.name}}">
+                                <button value="{{infos.isbn}}" name="isbn" type="submit" class="glow-on-hover">Approve Request
+                                </button>
+
+                            </div>
+                        </form>
+
+                    </td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </body>
+
+</html>

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+
+        <meta name="viewport" content="initial-scale=1, width=device-width">
+        <title>
+            Student_Info
+        </title>
+        <link href="/static/successful.css" rel="stylesheet">
+
+    </head>
+
+    <body>
+        <div class="form1">
+            <form action="/{{button}}" method="get">
+                <h1>Hello,<br> {{name}}</h1><br>
+                <div class="container">
+                    <button class="glow-on-hover">{{button}} A Book</button>
+                </div>
+            </form>
+            <br>
+            <form action="/ebooks" method="get">
+                <div class="container">
+                    <button class="glow-on-hover">List of eBooks</button>
+                </div>
+            </form>
+            <br>
+            <form action="/list" method="get">
+                <div class="container">
+                    <button class="glow-on-hover">List of Hardcopys</button>
+                </div>
+            </form>
+            <br>
+         
+            <form action="/Borrow" method="get">
+                <div class="container">
+                    <button class="glow-on-hover">Find A Hardcopy</button>
+                </div>
+            </form>
+            <br>
+            <form action="/requests" method="get">
+                <div class="container">
+                    <button class="glow-on-hover">Request A New Book</button>
+                </div>
+            </form>
+            <br>
+            <form action="/upload" method="get">
+                <div class="container">
+                    <button class="glow-on-hover">Upload Ebooks</button>
+                </div>
+            </form>
+            <br>
+
+            <p> .................................................................................</p><br>
+            <form action="/logout" method="POST">
+
+                <div class="container">
+                    <button class="glow-on-hover">Logout</button>
+
+                </div>
+            </form>
+        </div>
+    </body>
+
+</html>

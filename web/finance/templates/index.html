@@ -1,0 +1,63 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Portfolio
+{% endblock %}
+
+{% block main %}
+<div class="table-container">
+<h1>WELCOME, {{users}}</h1>
+<br>
+<table>
+    <tr>
+        <th>Total Invested Amount</th>
+        <th>Total Current Amount </th>
+    </tr>
+    <tr>
+        <td>{{invest}}</td>
+        <td>{{value}}</td>
+    </tr>
+</table>
+<br><br>
+<table>
+    <tr>
+        <th>Total Profit/Loss </th>
+
+    </tr>
+    <tr>
+        <td>{{p_l}}</td>
+    </tr>
+</table>
+
+<br><br>
+
+    <table>
+        <tr>
+            <th>Name</th>
+            <th>Symbol</th>
+            <th>Quantity</th>
+            <th>Avg. Price</th>
+            <th>Current Price</th>
+            <th>Profit/Loss</th>
+            <th>Percentage of Profit</th>
+            <th>Invested Amount</th>
+            <th>Current Amount</th>
+        </tr>
+        {% for port in ports %}
+        <tr>
+                <td>{{port.name}}</td>
+                <td>{{port.symbol}}</td>
+                <td>{{port.quantity}}</td>
+                <td>{{port.price}}</td>
+                <td>{{port.c_price}}</td>
+                <td>{{port.profit}}</td>
+                <td>{{port.percent}} %</td>
+                <td>{{port.cash}}</td>
+                <td>{{port.current}}</td>
+        </tr>
+        {% endfor%}
+    </table>
+<br><br>
+<h3> Cash Balance : {{balance}} </h3>
+</div>
+{% endblock %}

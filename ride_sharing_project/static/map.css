@@ -1,0 +1,48 @@
+*,
+*:before,
+*:after {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-image: url('https://techcrunch.com/wp-content/uploads/2017/03/hero-london.png?resize=1200,675');
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: 50%;
+    background-position: top right;
+}
+
+.map-container {
+    width: 800px;
+    height: 400px;
+    background-image: url('https://techcrunch.com/wp-content/uploads/2017/03/hero-london.png?resize=1200,675');
+    background-size: cover;
+    background-position: center;
+    border-radius: 10px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.start-point {
+    width: 20px;
+    height: 20px;
+    background-color: #2ecc71; /* Green */
+    border-radius: 50%;
+    position: absolute;
+    top: 50px; /* Adjust as needed */
+    left: 100px; /* Adjust as needed */
+}
+
+.end-point {
+    width: 20px;
+    height: 20px;
+    background-color: #ff6b6b; /* Red */
+    border-radius: 50%;
+    position: absolute;
+    top: 250px; /* Adjust as needed */
+    left: 600px; /* Adjust as needed */
+}

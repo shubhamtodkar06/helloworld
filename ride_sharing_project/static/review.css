@@ -1,0 +1,102 @@
+*,
+*:before,
+*:after {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-image: url('https://img.freepik.com/free-vector/carpool-concept-illustration_114360-9919.jpg');
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: 50%;
+    background-position: top right;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.comment-and-review {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    font-size: 24px;
+    font-weight: bold;
+    color: #ffffff;
+}
+
+form {
+    background-image: url('https://media.istockphoto.com/id/1268054405/vector/route-planning-city-driving-road-network-destination-map.jpg?s=612x612&w=0&k=20&c=fFAXAL-udAnyNMc03hDYeVl3fg7LJyGu3XG-6xPi58o=');
+    width: 400px;
+    background-color: rgba(255, 255, 255, 0.13);
+    border-radius: 10px;
+    backdrop-filter: blur(10px);
+    border: 2px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 0 40px rgba(8, 7, 16, 0.6);
+    padding: 50px 35px;
+}
+
+form * {
+    font-family: Courier New, Courier, Lucida Sans Typewriter, Lucida Typewriter, monospace;
+    font-weight: 800;
+    color: #ffffff;
+    letter-spacing: 0.5px;
+    outline: none;
+    border: none;
+}
+
+form h1 {
+    font-size: 50px;
+    font-weight: 500;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+input[type="text"],
+textarea {
+    display: block;
+    width: 100%;
+    height: 50px;
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 5px;
+    padding: 10px;
+    margin-bottom: 20px;
+    font-size: 16px;
+    font-weight: 300;
+}
+
+textarea {
+    height: 150px; /* Increase height for the comment box */
+}
+
+button {
+    width: 100%;
+    height: 50px;
+    background-color: #9c27b0; /* Magnificent purple color */
+    color: #fff;
+    font-size: 18px;
+    font-weight: 600;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #7b1fa2; /* Darker shade of purple on hover */
+}
+
+::placeholder {
+    color: #e5e5e5;
+}
+
+p.error {
+    font-size: 14px;
+    color: red;
+    margin-top: 10px;
+}

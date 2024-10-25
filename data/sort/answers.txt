@@ -1,0 +1,11 @@
+sort1 uses: Bubble Sort
+
+How do you know?: If sort2 takes minimum time, then it is Merge, and now in remaining two the time take more comparatively is by sort1. By this way we caim it as Bubble Sort. Also by checking BIG O time and BIG OMEGA time we can recognize it.
+
+sort2 uses: Merge Sort
+
+How do you know?: This type of sort is quite fast than other two types of sort. The time taken by this sort i.e. sort2 is less than other two types i.e.sort1 and sort3 to sort almost most of files.
+
+sort3 uses: Selection Sort
+
+How do you know?: We can differentiate this by analysing time taken to sort. We know that BIG O time and BIG OMEGA time is same for selection sort and that we can observe in data of time we collected i.e. the time take to sort random50000 and sorted50000m is almost same.

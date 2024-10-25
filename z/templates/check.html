@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Check Page</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <!-- Include any additional CSS files for styling -->
+    <link rel="stylesheet" href="/static/check.css"> <!-- Example: custom CSS file -->
+    <style>
+        /* Add your custom CSS styles here */
+        body {
+            font-family: Arial, sans-serif;
+            color: #333;
+            background-color: #f8f9fa; /* Fallback color */
+            padding-top: 20px; /* Adjust as needed */
+            padding-bottom: 20px; /* Adjust as needed */
+            background-image: url('https://img.freepik.com/free-vector/taxi-app-interface-concept_23-2148484167.jpg');
+            background-size: 60%; /* Adjust image size */
+            background-repeat: no-repeat;
+            background-position: center bottom; /* Move image to bottom */
+            background-attachment: fixed;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background-color: rgba(255, 255, 255, 0.9); /* Add a semi-transparent white background */
+            border-radius: 10px; /* Add rounded corners */
+            padding: 20px;
+        }
+        .card {
+            margin-top: 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            background-color: #fff;
+            border-radius: 10px;
+        }
+        .card-title {
+            font-size: 1.25rem;
+            color: #007bff;
+            padding: 10px;
+            background-color: #f8f9fa;
+            border-bottom: 1px solid #dee2e6;
+            border-radius: 10px 10px 0 0;
+            margin: 0;
+        }
+        .list-group-item {
+            background-color: #f8f9fa;
+            border-color: #dee2e6;
+            padding: 10px;
+            margin-bottom: 0;
+        }
+        .list-group-item strong {
+            color: #28a745;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Welcome, {{ info[0]['name'] }}</h1>
+        <h2>Your Ride Information:</h2>
+        <div class="card">
+            <div class="card-body">
+                <h5 class="card-title">Ride Details</h5>
+                {% if ride %}
+                    <ul class="list-group">
+                        {% for r in ride %}
+                            <li class="list-group-item">
+                                <strong>Pickup Location:</strong> {{ r['pick'] }}<br>
+                                <strong>Drop-off Location:</strong> {{ r['drop_l'] }}<br>
+                                <strong>Date:</strong> {{ r['date'] }}<br>
+                                <strong>Time Start:</strong> {{ r['time1'] }}<br>
+                                <strong>Time End:</strong> {{ r['time2'] }}<br>
+                                <strong>Role:</strong> {{ r['who'] }}
+                            </li>
+                        {% endfor %}
+                    </ul>
+                {% else %}
+                    <p>No ride information found.</p>
+                {% endif %}
+            </div>
+            <form action="/delete" method="get">
+                <div class="container">
+                    <button class="glow-on-hover">Delete Ride</button>
+                </div>
+            </form><form action="/success" method="post">
+                <div class="container">
+                    <button class="glow-on-hover">Home</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</body>
+</html>

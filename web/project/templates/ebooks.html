@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+    <head>
+        <meta name="viewport" content="initial-scale=1, width=device-width">
+
+        <title>
+            eBooks
+        </title>
+        <link href="/static/list.css" rel="stylesheet">
+
+    </head>
+
+    <body>
+        <form action="/logout" method="get">
+            <div class="new2">
+                <div class="container">
+                    <button class="glow-on-hover">Logout</button>
+                </div>
+            </div>
+        </form>
+        <div class="container">
+
+            <form class="search-form" method="GET" action="{{ url_for('index') }}">
+                <input type="text" name="search" placeholder="Find eBook">
+                <br>
+                <button type="submit" class="glow-on-hover">Search</button>
+
+            </form>
+        </div>
+        <br>
+        <div class="container">
+            <table>
+                <tr>
+
+                    <th>Avaliable Books</th>
+                    <th>Open Here</th>
+                </tr>
+
+                {% for file in files %}
+                <tr>
+                    <td>{{file}}</td>
+                    <td>
+                        <button onclick="window.location.href='{{ url_for('serve_ebook', filename=file) }}'" class="glow-on-hover">
+                            Click Here
+                        </button>
+                </tr>
+                {% endfor %}
+            </table>
+            <div>
+    </body>
+
+</html>
